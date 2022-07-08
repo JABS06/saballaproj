@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if infos %}
+	<br>
+	<div class="personal">
+		<h1>Update your Info here</h1>
+	<form  id="info" action="{% url 'Updateinfo' infos.id %}" method="POST">
+		{% csrf_token %}
+		<label for ="firstname">First name</label><br>
+		<input  id="firstname" type="text" name="p_fname" placeholder="Your First name here" value={{infos.p_fname}}><br>
+		<label for="surname">Surname</label><br>
+		<input id="surname" type="text" name="p_sname"  placeholder="Your Surname here" value={{infos.p_sname}}><br>
+		<label for="email">Email</label><br>
+		<input  id="email" type="text" name="p_email"  placeholder="Your Email here" value="{{infos.p_email}}"><br>
+		<label for="purpose">Purpose of Build</label><br>
+		<input  id="purpose" type="text" name="p_purpose"  placeholder="Your Purpose here" value="{{infos.p_purpose}}"><br>
+		<label for="budget">Budget of Build</label><br>
+		<input  id="budget" type="number" name="p_budget"  placeholder="Your Budget here" min="15000"  value="{{infos.p_budget}}" ><br>
+		<input  type="submit" value="Done">
+		<input type="reset" name="clear" value="Clear content"></form></div></div></form>
+{% else %}
+	<br>
+	<div class="personal">
+		<h1>Update your Info here</h1>
+	<form  id="info" action="" method="POST" name="">
+		{% csrf_token %}
+		<label for ="firstname">First name</label><br>
+		<input  id="firstname" type="text" name="p_fname" placeholder="Your First name here"><br>
+		<label for="surname">Surname</label><br>
+		<input  id="surname" type="text" name="p_sname"  placeholder="Your Surname here" ><br>
+		<label for="email">Email</label><br>
+		<input id="email" type="text" name="p_email"  placeholder="Your Email here" ><br>
+		<label for="purpose">Purpose of Build</label><br>
+		<input  id="purpose" type="text" name="p_purpose"  placeholder="Your Purpose here"><br>
+		<label for="budget">Budget of Build</label><br>
+		<input  id="budget" type="number" name="p_budget"  placeholder="Your Budget here" min="15000"  ><br>
+		<input  type="submit" value="Done">
+		<input  type="reset" name="clear" value="Clear content"></form></div></div></form>
+		{% endif %}
+	{% endblock %}

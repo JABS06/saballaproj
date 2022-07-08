@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+	
+	{% block content %}
+<br>
+	<div class="contaxtbox" >
+		<h1>Create Your Profile here</h1>
+	<form  id="info" action="{% url 'Createinfo' %}" method="POST">
+		{% csrf_token %}
+		<label for ="firstname">First name</label><br>
+		<input class="formation" id="firstname" type="text" name="p_fname" placeholder="Your First name here" required><br>
+		<label for="surname">Surname</label><br>
+		<input class="formation" id="surname" type="text" name="p_sname"  placeholder="Your Surname here" required><br>
+		<label for="email">Email</label><br>
+		<input class="formation" id="email" type="email" name="p_email"  placeholder="Your Email here" required><br>
+		<label for="purpose">Purpose of Build</label><br>
+		<input class="formation" id="purpose" type="text" name="p_purpose"  placeholder="Your Purpose here"  required><br>
+		<label for="budget">Budget of Build</label><br>
+		<input class="formation" id="budget" type="number" name="p_budget"  placeholder="Your Budget here" min="15000" required><br>
+		<input class= "buttonstyle persdone" type="submit" value="Done">
+		<input class= "buttonstyle persreset" type="reset" name="clear" value="Clear content"></form></div>
+	{% endblock %}

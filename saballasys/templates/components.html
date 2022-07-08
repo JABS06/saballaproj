@@ -1,0 +1,227 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+<body class="page3">
+<br>
+<h2>Computer Components</h2>
+
+<div id="myBtnContainer" class="page3buttons">
+
+<button id="amdbtn" onclick="selectdiv('amdproc') ">AMD Processor</button>
+<button id="intbtn" onclick="selectdiv('intelproc')">Intel Processor</button>
+<button onclick="selectdiv('mobo')">Motherboard</button>
+<button onclick="selectdiv('gpu')">Graphics Card</button>
+<button onclick="selectdiv('ram')">RAM</button>
+<button onclick="selectdiv('psu')">Power Supply</button>
+</div>
+<button class="openbtn listabtn" onclick="opendivlist()">Show Build</button>
+<div class="lista" id="Divlist">
+<div class= "list-content">
+<label>My Build</label>
+<table id="listahan" border="1px"></table>
+<button class="listabtn" type="button" onclick="closedivlist()">Close</button>
+</div></div>
+<div class="container">
+<form  id="bilds" action="" method="POST">{% csrf_token %}
+<input type="text" class="showprice"  id="tprice" value="Total:" hidden>
+<input class="donebtn" type="submit" value="Done">
+<button type="reset" class="res" id="rstbtn">Reset</button>
+
+
+
+<div class="compDiv amdproc"><input id="" class="myBtn" type="radio" name="procs" value="AMD-Athlon-200GE"  onchange="computeprice();" required><img  src="/static/images/200ge.png" alt="200ge" >
+</div>
+
+<div class="compDiv amdproc" ><input id="PROC:-AMD-Athlon-300GE"  type="radio" name="procs" value='AMD-Athlon-300GE' class="myBtn" onchange="computeprice();"><img src="/static/images/300ge.png" alt="300ge">
+</div>
+
+<div class="compDiv amdproc" ><input id="PROC:-Ryzen-3-3100" type="radio" name="procs" value='Ryzen-3-3100' class="myBtn"  onchange="computeprice();"><img src="/static/images/33100.png" alt="33100">
+</div>
+<div class="compDiv amdproc" ><input id="PROC:-Ryzen-3-3200G" type="radio" name="procs" value="Ryzen-3-3200G" class="myBtn"  onchange="computeprice();"><img src="/static/images/33200g.png" alt="33200g">
+</div>
+<div class="compDiv amdproc" ><input id="PROC:-Ryzen-5-2400G" type="radio" name="procs" value="Ryzen-5-2400G" class="myBtn"  onchange="computeprice();"><img src="/static/images/52400g.png" alt="52400g">
+</div>
+<div class="compDiv amdproc" ><input id="PROC:-Ryzen-5-3500X" type="radio" name="procs" value="Ryzen-5-3500X" class="myBtn"  onchange="computeprice();"><img src="/static/images/53500x.png" alt="53500x">
+</div>
+<div class="compDiv amdproc" ><input id="PROC:-Ryzen-5-2600" type="radio" name="procs" value="Ryzen-5-2600" class="myBtn"  onchange="computeprice();"><img src="/static/images/52600.png" alt="52600">
+</div>
+<div class="compDiv amdproc" ><input id="PROC:-Ryzen-5-3400G" type="radio" name="procs" value="Ryzen-5-3400G" class="myBtn"  onchange="computeprice();"><img src="/static/images/53400g.png" alt="53400g">
+</div>
+<div class="compDiv amdproc" ><input id="PROC:-Ryzen-5-3600" type="radio" name="procs" value="Ryzen-5-3600" class="myBtn"  onchange="computeprice();"><img src="/static/images/53600.png" alt="53600">
+</div>
+<div class="compDiv amdproc" ><input id="PROC:-Ryzen-5-5600X" type="radio" name="procs" value="Ryzen-5-5600X" class="myBtn"  onchange="computeprice();"><img src="/static/images/55600x.png"  alt="55600x">
+</div>
+<div class="compDiv amdproc" ><input id="PROC:-Ryzen-7-5800X" type="radio" name="procs" value="Ryzen-7-5800X" class="myBtn"  onchange="computeprice();"><img src="/static/images/75800x.png" alt="75800x">
+</div>
+<div class="compDiv amdproc" ><input id="PROC:-Ryzen-9-5900X" type="radio" name="procs" value="Ryzen-9-5900X" class="myBtn"  onchange="computeprice();"><img src="/static/images/95900x.png" alt="95900x">
+</div>
+<div class="compDiv intelproc" ><input id="PROC:-Intel-Pentium-Gold-G6405" type="radio" name="procs" value="Intel-Pentium-Gold-G6405" class="myBtn"  onchange="computeprice();"><img src="/static/images/g6405.png" alt="g6405">
+</div>
+<div class="compDiv intelproc" ><input id="PROC:-Intel-Core-i3-10100F" type="radio" name="procs" value="Intel-Core-i3-10100F" class="myBtn"  onchange="computeprice();"><img src="/static/images/10100f.png" alt="10100f">
+</div>
+<div class="compDiv intelproc" ><input id="PROC:-Intel-Core-i5-10400F" type="radio" name="procs" value="Intel-Core-i5-10400F" class="myBtn"  onchange="computeprice();"><img src="/static/images/10400f.png" alt="10400f">
+</div>
+<div class="compDiv intelproc" ><input id="ROC:-Intel-Core-i5-11400F" type="radio" name="procs" value="Intel-Core-i5-11400F" class="myBtn"  onchange="computeprice();"><img src="/static/images/11400f.png" alt="11400f">
+</div>
+<div class="compDiv intelproc" ><input id="PROC:-Intel-Core-i5-12400F" type="radio" name="procs" value="Intel-Core-i5-12400F" class="myBtn"  onchange="computeprice();"><img src="/static/images/12400f.png" alt="12400f">
+</div>
+<div class="compDiv intelproc" ><input id="PROC:-Intel-Core-i5-12600KF" type="radio" name="procs" value="Intel-Core-i5-12600K" class="myBtn"  onchange="computeprice();"><img src="/static/images/12600kf.png" alt="12600kf">
+</div>
+<div class="compDiv intelproc" ><input id="PROC:-Intel-Core-i7-10700F" type="radio" name="procs" value="Intel-Core-i7-10700" class="myBtn"  onchange="computeprice();"><img src="/static/images/10700f.png" alt="10700f">
+</div>
+<div class="compDiv intelproc" ><input id="PROC:-Intel-Core-i7-11700F" type="radio" name="procs" value="Intel-Core-i7-11700F" class="myBtn"  onchange="computeprice();"><img src="/static/images/11700f.png" alt="11700f">
+</div>
+<div class="compDiv intelproc" ><input id="PROC:-Intel-Core-i7-11700" type="radio" name="procs" value="Intel-Core-i7-11700" class="myBtn"  onchange="computeprice();"><img src="/static/images/11700.png" alt="11700">
+</div>
+<div class="compDiv intelproc" ><input id="PROC:-Intel-Core-i9-11900F" type="radio" name="procs" value="Intel-Core-i9-11900F" class="myBtn"  onchange="computeprice();"><img src="/static/images/11900f.png" alt="11900f">
+</div>
+<div class="compDiv intelproc" ><input id="PROC:-Intel-Core-i9-11900" type="radio" name="procs" value="Intel-Core-i9-11900" class="myBtn"  onchange="computeprice();"><img src="/static/images/11900.png" alt="11900">
+</div>
+<div class="compDiv intelproc" ><input id="PROC:-Intel-Core-i9-12900K"  type="radio" name="procs" value="Intel-Core-i9-12900K" class="myBtn"  onchange="computeprice();"><img src="/static/images/12900k.png"  alt="12900k">
+</div>
+<div class="compDiv mobo" ><input id="MOBO:-Gigabyte-A320M-S2H" type="radio" name="mobo" 
+value="Gigabyte-A320M-S2H" class="myBtn"  onchange="computeprice();" required><img src="/static/images/a320m.png" alt="a320m" >
+</div>
+<div class="compDiv mobo" ><input id="-----MOBO:-GA-A520M-Aorus-Elite" type="radio" name="mobo" 
+value="GA-A520M-Aorus-Elite" class="myBtn"  onchange="computeprice();"><img src="/static/images/a520m.png" alt="a520m">
+</div>
+<div class="compDiv mobo" ><input id="-----MOBO:-B450-Tomahawk-Max" type="radio" name="mobo"
+value="B450-Tomahawk-Max" class="myBtn"  onchange="computeprice();"><img src="/static/images/b450t.png" alt="b450t">
+</div>
+<div class="compDiv mobo" ><input id="-----MOBO:-Asus-ROG-Strix-B450-F" type="radio" name="mobo" value="Asus-ROG-Strix-B450-F" class="myBtn"  onchange="computeprice();"><img src="/static/images/b450f.png" alt="b450f">
+</div>
+<div class="compDiv mobo" ><input id="-----MOBO:-ASUS-Prime-B550M-A-WIFI-II" type="radio" name="mobo" 
+value="ASUS-Prime-B550M-A-WIFI-II" class="myBtn"  onchange="computeprice();"><img src="/static/images/b550a.png" alt="b550a">
+</div>
+<div class="compDiv mobo" ><input id="-----MOBO:-ASUS-TUF-GAMING-X570-PLUS-WIFI" type="radio" name="mobo" 
+value="ASUS-TUF-GAMING-X570-PLUS-WIFI" class="myBtn"  onchange="computeprice();"> <img src="/static/images/x570.png" alt="x570">
+</div>
+<div class="compDiv mobo" ><input id="-----MOBO:-GIGABYTE-H410M-H-V3" type="radio" name="mobo" 
+value="GIGABYTE-H410M-H-V3" class="myBtn"  onchange="computeprice();"><img src="/static/images/h410m.png" alt="h410m">
+</div>
+<div class="compDiv mobo" ><input id="-----MOBO:-MSI-H510M-PRO" type="radio" name="mobo" value="MSI-H510M-PRO" class="myBtn"  onchange="computeprice();"><img src="/static/images/h510m.png" alt="h510m"> 
+</div>
+<div class="compDiv mobo" ><input id="-----MOBO:-GIGABYTE-B560M-GAMING-HD" type="radio" name="mobo" value="GIGABYTE-B560M-GAMING-HD" class="myBtn"  onchange="computeprice();"><img src="/static/images/b560m.png" alt="b560m">
+</div>
+<div class="compDiv mobo" ><input id="-----MOBO:-ASUS-ROG-STRIX-B560-G-GAMING-PLUS-WIFI" type="radio" name="mobo" value="ASUS-ROG-STRIX-B560-G-GAMING-PLUS-WIF" class="myBtn"  onchange="computeprice();"><img src="/static/images/b560g.png" alt="b560g">
+</div>
+<div class="compDiv mobo" ><input id="-----MOBO:-MSI-MAG-Z590-TORPEDO" class="myBtn" type="radio" name="mobo" value="MSI-MAG-Z590-TORPEDO" onchange="computeprice();">
+<img src="/static/images/z590.png" alt="z590">
+</div>
+<div class="compDiv mobo" ><input id="-----MOBO:-NZXT-N7-Z590-GAMING-MATTE-WHITE" class="myBtn" type="radio" name="mobo" value="NZXT-N7-Z590-GAMING-MATTE-WHITE" onchange="computeprice();">
+<img src="/static/images/nzxt.png" alt="nzxt">
+</div>
+<div class="compDiv gpu" ><input id="-----GPU:-ZOTAC-GTX-1050-TI" class="myBtn" type="radio" name="gpu" value="ZOTAC-GTX-1050-TI" onchange="computeprice();" required>
+<img src="/static/images/1050ti.png" alt="1050ti" >
+</div>
+<div class="compDiv gpu" ><input id="-----GPU:-COLORFUL-GTX-1650-NB" class="myBtn" type="radio" name="gpu" value="COLORFUL-GTX-1650-NB" onchange="computeprice();">
+<img src="/static/images/1650nb.png" alt="1650nb">
+</div>
+<div class="compDiv gpu" ><input id="-----GPU:-ASUS-TUF-GAMING-GTX-1660-SUPER-OC" class="myBtn" type="radio" name="gpu" value="ASUS-TUF-GAMING-GTX-1660-SUPER-OC" onchange="computeprice();">
+<img src="/static/images/1660super.png"  alt="1660s">
+</div>
+<div class="compDiv gpu" ><input id="-----GPU:-GIGABYTE-RTX-2060-D6" class="myBtn" type="radio" name="gpu" value="GIGABYTE-RTX-2060-D6" onchange="computeprice();">
+<img src="/static/images/2060d6.png"  alt="2060d6">
+</div>
+<div class="compDiv gpu" ><input id="-----GPU:-MSI-RTX-3070-TI-VENTUS-3X" class="myBtn" type="radio" name="gpu" value="MSI-RTX-3070-TI-VENTUS-3" onchange="computeprice();">
+<img src="/static/images/3070ti.png"  alt="3070ti">
+</div>
+<div class="compDiv gpu" ><input id="-----GPU:-NVIDIA-QUADRO-P5000" class="myBtn" type="radio" name="gpu" value="VIDIA-QUADRO-P5000" onchange="computeprice();" >
+<img src="/static/images/p5000.png" alt="p5000" >
+</div>
+<div class="compDiv gpu" ><input id="-----GPU:-POWERCOLOR-RED-DRAGON-RX-550" class="myBtn" type="radio" name="gpu" value="POWERCOLOR-RED-DRAGON-RX-550" onchange="computeprice();">
+<img src="/static/images/rx550.png"  alt="rx550">
+</div>
+<div class="compDiv gpu" ><input id="-----GPU:-ASUS-RX-6500-XT-DUAL-OC" class="myBtn" type="radio" name="gpu" value="ASUS-RX-6500-XT-DUAL-OC" onchange="computeprice();">
+<img src="/static/images/6500xt.png" alt="6500xt" >
+</div>
+<div class="compDiv gpu" ><input id="-----GPU:-SAPPHIRE-PULSE-RX-6600-GAMING" class="myBtn" type="radio" name="gpu" value="SAPPHIRE-PULSE-RX-6600-GAMING" onchange="computeprice();">
+<img src="/static/images/6600.png"  alt="6600">
+</div>
+<div class="compDiv gpu" ><input id="-----GPU:-GIGABYTE-AORUS-RX-6700-XT-ELITE" class="myBtn" type="radio" name="gpu" value="GIGABYTE-AORUS-RX-6700-XT-ELITE" onchange="computeprice();">
+<img src="/static/images/6700xt.png" alt="6700xt">
+</div>
+<div class="compDiv gpu" ><input id="-----GPU:-GIGABYTE-RX-6800-XT-GAMING-OC" class="myBtn" type="radio" name="gpu" value="GPU:-GIGABYTE-RX-6800-XT-GAMING-OC" onchange="computeprice();">
+<img src="/static/images/6800xt.png"  alt="6800xt">
+</div>
+<div class="compDiv gpu" ><input id="-----GPU:-GIGABYTE-AORUS-RX-6900-XT-MASTER"  class="myBtn" type="radio" name="gpu" value="GIGABYTE-AORUS-RX-6900-XT-MASTER" onchange="computeprice();"> 
+<img src="/static/images/6900xt.png"  alt="6900xt">
+</div>
+<div class="compDiv ram" ><input id="-----RAM:-GSKILL-AEGIS" class="myBtn" type="radio" name="ram" value="RAM:-GSKILL-AEGIS" onchange="computeprice();" required>
+<img src="/static/images/aegis.png"  alt="aegis" >
+</div>
+<div class="compDiv ram" ><input id="-----RAM:-KINGSTON-FURY-BEAST" class="myBtn" type="radio" name="ram" value="KINGSTON-FURY-BEAST" onchange="computeprice();">
+<img src="/static/images/fury.png"  alt="fury">
+</div>
+<div class="compDiv ram" ><input  id="-----RAM:-CORSAIR-VENGEANCE-LPX" class="myBtn" type="radio" name="ram" value="CORSAIR-VENGEANCE-LPX" onchange="computeprice();">
+<img src="/static/images/lpx.png" alt="lpx">
+</div>
+<div class="compDiv ram" ><input id="-----RAM:-KINGSTON-FURY-BEAST-RGB" class="myBtn" type="radio" name="ram" value="KINGSTON-FURY-BEAST-RGB" onchange="computeprice();">
+<img src="/static/images/fury1.png" alt="fury1" >
+</div>
+<div class="compDiv ram" ><input id="-----RAM:-APACER-NOX-RGB" class="myBtn" type="radio" name="ram" value="APACER-NOX-RGB" onchange="computeprice();">
+<img src="/static/images/nox.png"  alt="nox">
+</div>
+<div class="compDiv ram" ><input id="-----RAM:-CORSAIR-VENGEANCE-LPX8GB" class="myBtn" type="radio" name="ram" value="CORSAIR-VENGEANCE-LPX8GB" onchange="computeprice();">
+<img src="/static/images/lpx8.png"  alt="lpx8">
+</div>
+<div class="compDiv ram" ><input id="-----RAM:-T-FORCE-DARK-Z" class="myBtn" type="radio" name="ram" value="T-FORCE-DARK-Z" onchange="computeprice();" >
+<img src="/static/images/darkz.png" alt="darkz" >
+</div>
+<div class="compDiv ram" ><input id="-----RAM:-APACER-PANTHER" class="myBtn" type="radio" name="ram" value="APACER-PANTHER" onchange="computeprice();">
+<img src="/static/images/panther.png"  alt="panther">
+</div>
+<div class="compDiv ram" ><input id="-----RAM:-T-FORCE-DELTA-TUF-RGB" class="myBtn" type="radio" name="ram" value="T-FORCE-DELTA-TUF-RGB" onchange="computeprice();">
+<img src="/static/images/delta.png"  alt="delta">
+</div>
+<div class="compDiv ram" ><input id="-----RAM:-KINGSTON-FURY-BEAST-RGB-32GB" class="myBtn" type="radio" name="ram" value="KINGSTON-FURY-BEAST-RGB-32GB" onchange="computeprice();">
+<img src="/static/images/fury2.png"  alt="fury2">
+</div>
+<div class="compDiv ram" ><input id="-----RAM:-GSKILL-TRIDENT-Z-RGB" class="myBtn" type="radio" name="ram" value="GSKILL-TRIDENT-Z-RGB" onchange="computeprice();">
+<img src="/static/images/gskill.png"  alt="gskill1">
+</div>
+<div class="compDiv ram" ><input id="-----RAM:-GSKILL-TRIDENT-Z-NEO-RGB" class="myBtn" type="radio" name="ram" value="GSKILL-TRIDENT-Z-NEO-RGB" onchange="computeprice();">
+<img src="/static/images/neo.png"  alt="neo">
+</div>
+<div class="compDiv psu" ><input id="-----PSU:-CORSAIR-CV450" class="myBtn" type="radio" name="psu" value="CORSAIR-CV450" onchange="computeprice();" required>
+<img src="/static/images/cv450.png"  alt="cv450" >
+</div>
+<div class="compDiv psu" ><input  id="-----PSU:-FSP-HV-PRO-550" class="myBtn" type="radio" name="psu" value="FSP-HV-PRO-550" onchange="computeprice();">
+<img src="/static/images/pro550.png"  alt="pro550">
+</div>
+<div class="compDiv psu" ><input id="-----PSU:-SILVERSTONE-SST-ST60F-ES230" class="myBtn" type="radio" name="psu" value="SILVERSTONE-SST-ST60F-ES230" onchange="computeprice();">
+<img src="/static/images/es230.png"  alt="es230">
+</div>
+<div class="compDiv psu" ><input id="-----PSU:-GIGABYTE-P550B" class="myBtn" type="radio" name="psu" value="GIGABYTE-P550B" onchange="computeprice();">
+<img src="/static/images/p550b.png" alt="p550b">
+</div>
+<div class="compDiv psu" ><input id="-----PSU:-COOLER-MASTER-MWE" class="myBtn" type="radio" name="psu" value="COOLER-MASTER-MWE" onchange="computeprice();">
+<img src="/static/images/mwe.png"  alt="mwe">
+</div>
+<div class="compDiv psu" ><input id="-----PSU:-SEASONIC-CORE-GC550" class="myBtn" type="radio" name="psu" value="SEASONIC-CORE-GC550" onchange="computeprice();">
+<img src="/static/images/gc550.png"  alt="gc550">
+</div>
+<div class="compDiv psu" ><input id="-----PSU:-SEASONIC-CORE-GM-550" class="myBtn" type="radio" name="psu" value="SEASONIC-CORE-GM-550" onchange="computeprice();">
+<img src="/static/images/gm550.png"  alt="gm550">
+</div>
+<div class="compDiv psu" ><input id="-----PSU:-BEQUIET-SYSTEM-POWER-9" class="myBtn" type="radio" name="psu" value="BEQUIET-SYSTEM-POWER-9" onchange="computeprice();">
+<img src="/static/images/power9.png"  alt="power9">
+</div>
+<div class="compDiv psu" ><input id="-----PSU:-CORSAIR-CX550F-RGB" class="myBtn" type="radio" name="psu" value="CORSAIR-CX550F-RGB" onchange="computeprice();">
+<img src="/static/images/cx550f.png"  alt="cx550f">
+</div>
+<div class="compDiv psu" ><input id="-----PSU:-ANTEC-NE750G" class="myBtn" type="radio" name="psu" value="ANTEC-NE750G" onchange="computeprice();">
+<img src="/static/images/ne750g.png" alt="ne750g" >
+</div>
+<div class="compDiv psu" ><input id="-----PSU:-NZXT-C650" class="myBtn" type="radio" name="psu" value="NZXT-C650" onchange="computeprice();">
+<img src="/static/images/c650.png"  alt="c650">
+</div>
+<div class="compDiv psu" ><input id="-----PSU:-SUPER-FLOWER-LEADEX-III-ARGB" class="myBtn" type="radio" name="psu" value="UPER-FLOWER-LEADEX-III-ARGB" onchange ="computeprice();" >
+<img src="/static/images/leadex.png" alt="leadex">
+</div>
+</form>
+</div>
+
+{% endblock %}    

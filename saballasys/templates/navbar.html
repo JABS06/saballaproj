@@ -1,0 +1,31 @@
+{% block content %}
+	<nav class="navstyle">
+		<div class="logo"> PC STARTER FACTS</div>
+		<ul class="navi">
+			<li><a href="{% url 'Home' %}"> Home</a></li>
+			<li><a href="{% url 'Howtobuild' %}"> How to Build</a>
+				<ul>
+				<li><a href="{% url 'Tips' %}">Tips and Tricks</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="{% url 'Builds' %}">PC Builds</a>
+				<ul>
+					<li><a href="{% url 'Createinfo' %}">Create Profile</a></li>
+					<li><a href="{% url 'Profilelist' %}">Profile List</a></li>
+					<li><a href="{% url 'Componentlist' %}">Components</a></li>
+					<li><a href="{% url 'Feedbacks' %}">Feedback</a></li>
+				</ul>
+			</li>
+			<li><a href="{% url 'Videos' %}"> Videos</a></li>
+			<li><a href="{% url 'About' %}">About Us</a>
+				<ul>
+					<li><a href="{% url 'Contact' %}">Contact Us</a></li>
+				</ul>
+			</li>
+		</ul>
+		</div>
+	</nav>
+
+
+	{% endblock %}

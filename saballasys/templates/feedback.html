@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<br>
+<div class="contactbox">
+	<h1>Your Feedback here</h1>
+<form id="feedb" action="{% url 'Feedbacks' %}" method="POST">
+	{% csrf_token %}
+	<textarea name="feedmes" rows="5" cols="20"></textarea>
+	<label>Your name here</label> <br>
+	<input style="height: 30px;" type="text" name="feedname">
+	<input class="donebtn" type="submit" value="Done">
+	<table id="saballasys_info" border="2px" align="center" width="100%" style="text-align: center; border-style: double;">
+			<tr style="border: 2px;">
+				<th>Name</th>
+				<th>Message</th>
+				<th>Delete</th>
+			<tr/> 
+			{% for fd in feedsb %}
+			<tr>
+				<td>{{forloop.counter}}: {{fd.feedname}}</td> 
+				<td>{{fd.feedmes}} </td> 
+				<td><a href="{% url 'Feedbackdelete' fd.id %}">Delete</a></td>
+			</tr>
+			{% endfor %}
+		</tr>
+	</table>
+</form></div>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+	{% block content %}
+	<title>Contact Us</title>
+
+	
+<body class="page6">
+	<br>
+	<h1>Contact PC Starter Facts </h1>
+	<div class="contactbox">
+		<h2>If you have any concern, issue, comments, and questions just contact us and we will do our best to give you the answer that you needed.</h2>
+		<form id="contactbox" action="mailto:pcstarterfacts@gmail.com" 
+		method="post" enctype="text/plain">
+		<label for ="email">Email</label><br>
+		<input id="email" type="text" name="useremail" class="formation" placeholder="Your email address here" required><br>
+		<label for="fullname">Name</label><br>
+		<input id="fullname" type="text" name="name" class="formation" placeholder="Your name here" required><br>
+		<label for = "topic">Topic</label><br>
+		<select name="dropdown" id="topic" >
+			<option value="0" > Customer Feedback</option>
+			<option value="1"> Problem and Concern</option>
+			<option value="2"> Suggestions</option>
+			<option value="3" > Others</option>
+		</select>
+		<br>
+		<label for= "mes" >Message</label><br>
+		<textarea id="mes" name="message" placeholder="Write your message here" required></textarea><br>
+		<input class="contactbutton" type="submit" value="Submit to PCS Facts" >
+		<input class="contactclear" type="reset" name="clear" value="Clear content">
+	</form>
+
+</div>
+
+{% endblock %}

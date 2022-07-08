@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+	{% block content %}
+	<title>Reviews</title>
+</head>
+	<body>
+		<br>
+			<form method="POST" action="">
+				<div>
+			<table id="buildlist" border="1px"  align="center" width="70%" style="text-align: center;">
+			<div><h1>My Build</h1>
+				        <button class= "buttonstyle" id="createbtn" >Create Build</button>
+				        <button class="edtbtn buttonstyle" id="editbtn">Edit Build</button>
+			<tr>
+				<th>Build No.</th>
+				<th>Processor</th>
+				<th>Motherboard</th>
+				<th>Graphics Card</th>
+				<th>RAM</th>
+				<th>Power Supply</th>
+				<th>Description</th>	
+			</tr> 	
+		</div>
+	</table>
+
+	{% endblock %}
