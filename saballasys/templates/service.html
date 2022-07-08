@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+	{% block content %}
+	
+	<title>Build Service</title>
+
+<br>			
+<div><h1>Build Service</h1></div>
+	<table id="builserv" border="2px" align="center" width="80%" style="text-align: center; border-style: double;">
+      
+			<tr>
+				<th>Build No.</th>
+				<th>Processor</th>
+				<th>Motherboard</th>
+				<th>Graphics Card</th>
+				<th>RAM</th>
+				<th>Power Supply</th>	
+				<th>Delete</th>
+			<tr/> 
+			{% for bld in bilds %}
+			<tr>
+				<td>{{forloop.counter}} </td>
+				<td>{{bld.procs}} </td> 
+				<td>{{bld.mobo}} </td>
+				<td>{{bld.gpu}} </td> 
+				<td>{{bld.ram}} </td> 
+				<td> {{bld.psu}}</td> 
+			</tr>
+			{% endfor %}
+	</table>
+</div>
+	{% endblock %}

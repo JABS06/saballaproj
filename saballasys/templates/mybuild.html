@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+
+	{% block content %}
+	<title>PC Starter Facts</title>
+		<br>
+		<div class="profilebox">
+		<table id="prof">
+		<div class="profh1"><h1>Profile</hh></div>
+			<th style="width: 100px">Fullname:</th>
+			<th style="width: 600px">Email:</th>
+			<th style="width: 400px">Adress:</th>
+			<th style="width: 800px">Contact No.:</th>
+		</table>
+		<a class="createinfo" href="{% url 'Createinfo' %}"></a>Create Profile</a>
+</div>
+		<br>
+			<form method="POST" action="">
+				<div/>
+					<table id="buildlist" border="1px"  align="center" width="70%" style="text-align: center;">
+			<div><h1>My Build</h1>
+				        <button class= "buttonstyle" id="createbtn" >Create Build</button>
+				        <button class="edtbtn buttonstyle" id="editbtn">Edit Build</button>
+			<tr>
+				<th>Build No.</th>
+				<th>Processor</th>
+				<th>Motherboard</th>
+				<th>Graphics Card</th>
+				<th>RAM</th>
+				<th>Power Supply</th>
+				<th>Description</th>	
+			<tr/> 
+			{% for bld in mybld %}
+			<tr>
+				<td></td> 
+				<td>{{bld.fproc}} </td> 
+				<td>{{bld.fmobo}} </td>
+				<td>{{bld.fgpu}} </td> 
+				<td>{{bld.fram}} </td> 
+				<td>{{bld.fpsu}} </td> 
+				<td>{{bld.fdesc}} </td> 
+			</tr>
+			{% endfor %}
+		</tr>
+	</div>
+</table>
+	</body>
+</html>
+	{% endblock %}

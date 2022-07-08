@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+	
+	{% block content %}
+<br>
+	<div ><h1>Profiles</h1>
+	<table class="inftable" id="saballasys_info" border="2px" align="center" width="100%" style="text-align: center; border-style: double;">
+			<tr style="border: 2px;">
+				<th>Name</th>
+				<th>Email</th>
+				<th>Purpose of PC Build</th>
+				<th>Budget</th>
+				<th>Delete</th>
+				<th>Update</th>
+			<tr/> 
+			{% for inf in infos %}
+			<tr>
+				<td>{{forloop.counter}}: {{inf.p_fname}} {{inf.p_sname}}</td> 
+				<td>{{inf.p_email}} </td> 
+				<td>{{inf.p_purpose}} </td>
+				<td>{{inf.p_budget}} </td> 
+				<td><a href="{% url 'Delinfo' inf.id %}">Delete</a></td>
+				<td><a href="{% url 'Editinfo' inf.id %}">Update</a></td>
+			</tr>
+			{% endfor %}
+		</tr>
+	</table>
+</div>
+	{% endblock %}
